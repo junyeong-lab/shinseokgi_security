@@ -1,0 +1,39 @@
+{
+  "moduleKey": "exfiltration",
+  "techniques": [
+    "T1041",
+    "T1048"
+  ],
+  "patterns": [
+    {
+      "name": "처음 보는 목적지로 대량 반출",
+      "condition": "50MB 이상의 대량 자료를 낯선 목적지로 보냈으며 추가 이상 징후 확인",
+      "evidence": "MITRE ATT&CK T1048은 비C2 경로, T1041은 C2 통로의 정보 반출을 설명",
+      "reference": "https://attack.mitre.org/techniques/T1048/"
+    },
+    {
+      "name": "비정상 통로·시간대 대량 전송",
+      "condition": "업무시간 외, 미사용 포트, 명령 통로 등의 대량 송신",
+      "evidence": "MITRE ATT&CK T1041 Exfiltration Over C2 Channel",
+      "reference": "https://attack.mitre.org/techniques/T1041/"
+    },
+    {
+      "name": "반복·대량 파일 반출",
+      "condition": "고용량 반복 송신·대량 파일 또는 자료실 전체 반출 정황",
+      "evidence": "MITRE ATT&CK T1041/T1048 맥락에 따라 지속적인 파일 유출 신호 분석",
+      "reference": "https://attack.mitre.org/techniques/T1041/"
+    },
+    {
+      "name": "압축 후 낯선 목적지 전송",
+      "condition": "압축 파일의 낯선 목적지 업로드 및 고용량 전송",
+      "evidence": "압축은 단독 공격 근거가 아니며 목적지·실제 송신 여부를 확인",
+      "reference": "https://attack.mitre.org/techniques/T1048/"
+    },
+    {
+      "name": "반출 의심 추가 확인",
+      "condition": "소량·실패·미전송 압축 준비 등 반출 확정 불가",
+      "evidence": "전송량·파일 개수만으로 악성 반출 확정 불가",
+      "reference": "https://attack.mitre.org/techniques/T1048/"
+    }
+  ]
+}
