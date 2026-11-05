@@ -1,0 +1,10 @@
+{
+  "schema": "alekov.student-appearance.v1",
+  "appName": "olpot",
+  "dashboardPreset": "student-first",
+  "palette": {
+    "accent": "#1d4775",
+    "background": "#f2f5fa",
+    "surface": "#ffffff"
+  }
+}
