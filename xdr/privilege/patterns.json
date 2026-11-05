@@ -1,0 +1,39 @@
+{
+  "moduleKey": "privilege",
+  "techniques": [
+    "T1068",
+    "T1078"
+  ],
+  "patterns": [
+    {
+      "name": "예상 밖 관리자 그룹 변경",
+      "condition": "관리자 그룹 추가 및 원격 접속·다계정·명령 실행 등 추가 정황",
+      "evidence": "MITRE ATT&CK T1078: Valid Accounts",
+      "reference": "https://attack.mitre.org/techniques/T1078/"
+    },
+    {
+      "name": "승격 직후 관리자 명령",
+      "condition": "관리자 권한을 얻은 직후 관리자 명령 실행",
+      "evidence": "T1078 계정 권한 오남용 단서이며 T1068의 취약점 악용 사실을 별도 입증할 필요 있음",
+      "reference": "https://attack.mitre.org/techniques/T1078/"
+    },
+    {
+      "name": "이상 세션·권한 전환",
+      "condition": "낯선 출발지의 관리자 세션 전환 또는 다른 계정 권한으로 관리자 명령",
+      "evidence": "T1078은 계정 남용 및 추가 접근 권한 확보를 설명",
+      "reference": "https://attack.mitre.org/techniques/T1078/"
+    },
+    {
+      "name": "비정상 관리자 명령",
+      "condition": "평소와 다른 시간 및 낯선 주소에서 고권한 명령",
+      "evidence": "T1078에 따른 유효 계정 오용 조사",
+      "reference": "https://attack.mitre.org/techniques/T1078/"
+    },
+    {
+      "name": "권한 변경 정황 확인 필요",
+      "condition": "취소된 권한 요청·단독 관리자 명령·비관리자 그룹 변경 등",
+      "evidence": "T1068은 실제 소프트웨어 취약점 악용을 뜻하므로 UAC 표시·관리자 명령만으로 악용을 확정하지 않음",
+      "reference": "https://attack.mitre.org/techniques/T1068/"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "moduleKey": "persistence",
+  "techniques": [
+    "T1543",
+    "T1053"
+  ],
+  "patterns": [
+    {
+      "name": "서명 없는 서비스 등록·변조",
+      "condition": "신규 또는 변경된 서비스 실행 파일의 서명 부재와 임시 폴더/등록 정황",
+      "evidence": "MITRE ATT&CK T1543: Create or Modify System Process",
+      "reference": "https://attack.mitre.org/techniques/T1543/"
+    },
+    {
+      "name": "비정상 예약 작업 실행",
+      "condition": "임시 폴더 실행 파일을 참조하는 처음 보는 예약 작업 또는 비정상 시각 예약 작업",
+      "evidence": "MITRE ATT&CK T1053: Scheduled Task/Job",
+      "reference": "https://attack.mitre.org/techniques/T1053/"
+    },
+    {
+      "name": "시작 프로그램 등록 이상",
+      "condition": "평소 목록에 없는 시작 프로그램 등록과 실행 파일 경로 확인",
+      "evidence": "시작 폴더 자동 실행은 지속성 단서이나 T1543의 서비스 메커니즘과 동일하다고 단정하지 않음",
+      "reference": "https://attack.mitre.org/techniques/T1543/"
+    },
+    {
+      "name": "복합 자동실행 지속성",
+      "condition": "예약 작업 및 시작 프로그램이 동일 임시 실행 파일을 호출",
+      "evidence": "MITRE ATT&CK T1053과 운영체제 자동실행 지속성의 복합 단서",
+      "reference": "https://attack.mitre.org/techniques/T1053/"
+    },
+    {
+      "name": "지속성 변경 추가 확인",
+      "condition": "T1543/T1053 경보의 서비스·예약 작업 등 미확정 단서",
+      "evidence": "정상 관리도 예약 작업 및 서비스를 생성하므로 단독 징후만으로 차단하지 않음",
+      "reference": "https://attack.mitre.org/techniques/T1053/"
+    }
+  ]
+}
