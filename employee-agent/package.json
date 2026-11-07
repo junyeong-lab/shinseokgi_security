@@ -5,9 +5,14 @@
   "type": "module",
   "scripts": {
     "start": "node src/start.mjs",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test",
+    "build:exe": "node --test && node tools/prepare-sea.mjs && postject dist/ShinseokgiEmployeeAgent.exe NODE_SEA_BLOB dist/sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2"
   },
   "engines": {
     "node": ">=22 <25"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "postject": "1.0.0-alpha.6"
   }
 }

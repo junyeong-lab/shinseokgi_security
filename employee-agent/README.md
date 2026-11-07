@@ -1,28 +1,26 @@
 # 신석기백화점 직원용 PC 보안 앱
 
-직원이 자기 Windows PC의 상태만 조회하는 **읽기 전용 로컬 앱**입니다. ALEPH 수업용 계정/AI/SDP/승인/XDR 메뉴를 노출하지 않습니다.
+직원 자신의 Windows PC 상태만 보여주는 읽기 전용 로컬 앱입니다. XDR, 접속 기록, 관리자 기능은 별도 IT 관리자 콘솔로 분리합니다.
 
-## 제공 화면
-- CPU, 메모리, 디스크 여유 공간, 네트워크 인터페이스 수
-- Windows 방화벽 프로필(Domain/Private/Public) 활성화 상태
-- 최근 24시간 Windows System/Application 경고·오류 건수(침해 사고 판정 아님)
+## 상태 조회
+CPU, 메모리, 디스크, 네트워크 인터페이스, Windows 방화벽 프로필, 최근 24시간 Windows System/Application 오류·경고 건수를 표시합니다. 측정에 실패하면 확인 불가를 표시하고 보안 사고로 임의 단정하지 않습니다.
 
-모든 값은 현재 PC에서 실측합니다. 읽지 못한 항목은 '확인 불가'로 표시합니다. 관리자 권한을 요구하거나 PC 설정을 변경하지 않습니다. 이 앱은 원격으로 PC 정보를 전송하지 않습니다.
+## 개발용 실행
+Windows PowerShell에서 이 폴더로 이동하여 아래 명령을 실행합니다.
 
-## 실행(Windows, Node.js 22~24)
-```powershell
-cd employee-agent
-npm start
-```
-같은 PC의 브라우저에서 http://127.0.0.1:5189 를 엽니다. 서버는 로컬 루프백에만 바인딩하며 외부 접속이나 관리 API를 제공하지 않습니다.
+    npm.cmd test
+    npm.cmd start
 
-## 테스트
-```powershell
-npm test
-```
+브라우저 주소는 http://127.0.0.1:5189 입니다.
 
-## 배포 상태
-현재는 개발용 소스입니다. 직원 PC용 EXE/설치 프로그램은 **아직 만들지 않았으며**, Windows 가상 PC에서 신 UI 실측 테스트를 마친 뒤 제작할 예정입니다. 기존 `endpoint-agent/`는 비교·검증용 수업 원본 복사본으로 잠시 유지하며 신규 배포 대상에서 제외합니다.
+## Windows EXE 제작 (Windows x64, Node.js 24)
+Windows 호스트 PC에서 employee-agent 폴더로 이동한 뒤 다음을 실행합니다.
 
-## 관리 시스템과 구분
-IT 담당자용 접속/XDR 기록 화면은 향후 별도의 **관리자 웹 콘솔**에서 제공합니다. 실제 Wazuh 수집/연동 및 권한 인증이 완료되기 전에는 실제 접속/XDR 기록이나 차단 성공을 표시하지 않습니다.
+    npm.cmd install
+    npm.cmd run build:exe
+
+성공하면 dist/ShinseokgiEmployeeAgent.exe 파일이 생성됩니다. Node.js SEA 기능을 사용하므로 설치 대상 Windows PC에 Node.js가 따로 필요하지 않습니다. 단, 화면을 보기 위한 브라우저는 필요합니다. EXE 실행 시 로컬 서버를 열고 기본 브라우저를 실행하려고 시도합니다. EXE 콘솔 창을 닫으면 서버가 종료됩니다.
+
+이것은 **서명되지 않은 개발·검증용 EXE**이며 Windows 10 가상 PC에서 실행·실측·종료·재시작을 테스트하기 전에는 배포 완료로 간주하지 않습니다. Windows SmartScreen 등의 보안 경고 가능성이 있으므로 외부 실제 배포에는 서명·신뢰·배포 정책이 추가로 필요합니다.
+
+EXE에는 관리자용 XDR 코드나 ALEPH 수업용 모듈을 포함하지 않습니다. node_modules와 dist는 Git 추적에서 제외합니다.

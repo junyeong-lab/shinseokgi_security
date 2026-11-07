@@ -4,7 +4,7 @@ GNS3 기반 신석기백화점 SI 실습용 보안 개발 저장소입니다. **
 
 | 위치 | 역할 | 현재 상태 |
 | --- | --- | --- |
-| [employee-agent/](employee-agent/) | 직원의 내 PC 상태만 보여 주는 읽기 전용 앱 | 개발용 소스 작성, Windows 테스트 전 |
+| [employee-agent/](employee-agent/) | 직원의 내 PC 상태만 보여 주는 읽기 전용 앱 | Windows 10 VM 화면 실측 확인, EXE 빌드·VM 테스트 전 |
 | 관리자 웹 콘솔 | IT 담당자의 접속 기록, Wazuh 탐지, XDR 분석 | 추후 구축 |
 | [xdr/](xdr/) | XDR 모의 경보 판정 코드 | 실제 Wazuh 연동 전 |
 | [kisa-checker/](kisa-checker/) | Linux 서버 취약점 점검기 | 실서버 검증 전 |

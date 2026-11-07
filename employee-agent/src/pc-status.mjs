@@ -3,12 +3,12 @@ import os from 'node:os';
 import {statfs} from 'node:fs/promises';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
-import {fileURLToPath} from 'node:url';
 import {join} from 'node:path';
 import {setTimeout as wait} from 'node:timers/promises';
 
 const execute = promisify(execFile);
-const diskRoot = fileURLToPath(new URL('../', import.meta.url));
+// SEA 실행파일에서는 OS 기본 드라이브 상태를 읽습니다.
+const diskRoot = process.platform === 'win32' ? (process.env.SystemDrive || 'C:') + '\\' : process.cwd();
 // 명령과 조회 범위는 고정이다. 이벤트 본문·사용자·호스트·주소를 출력하지 않는다.
 const WINDOWS_READ = String.raw`
 $ErrorActionPreference = 'Stop'
