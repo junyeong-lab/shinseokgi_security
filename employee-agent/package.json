@@ -1,0 +1,13 @@
+{
+  "name": "shinseokgi-employee-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/start.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22 <25"
+  }
+}

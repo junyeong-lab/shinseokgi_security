@@ -1,0 +1,17 @@
+:root{color-scheme:light;font-family:"Malgun Gothic",system-ui,-apple-system,sans-serif;color:#19283b;background:#f4f7fa}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:1030px;margin:0 auto;padding:28px 24px 48px}
+.top,.intro{display:flex;align-items:center;justify-content:space-between;gap:20px}.top{padding:0 0 26px;border-bottom:1px solid #dce4ec}
+.brand{display:flex;align-items:center;gap:11px}.brand div{display:grid;gap:3px}.brand strong{font-size:17px}.brand span:not(.mark){font-size:12px;color:#64748b}
+.mark{display:grid;place-items:center;width:39px;height:39px;border-radius:12px;background:#17395c;color:white;font-weight:800;font-size:20px}
+.role{border:1px solid #d5e1eb;border-radius:20px;padding:8px 13px;color:#49647e;font-size:12px;background:white}
+.intro{padding:38px 0 20px}.eyebrow{margin:0;color:#426b91;font-size:11px;font-weight:700;letter-spacing:1.5px}
+h1{margin:8px 0 12px;font-size:32px;letter-spacing:-1px}.sub{margin:0;line-height:1.6;color:#56677b;font-size:14px}
+button{background:#17395c;color:#fff;border:0;border-radius:10px;font-weight:700;padding:13px 19px;cursor:pointer;white-space:nowrap}
+button:disabled{opacity:.5;cursor:wait}button:focus-visible{outline:3px solid #80baff;outline-offset:3px}
+.status{margin:0 0 18px;padding:13px 16px;border:1px solid #dde6ef;background:#fff;border-radius:10px;color:#49647e;font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:#fff;border:1px solid #dfe7f0;border-radius:14px;padding:22px;min-height:157px;box-shadow:0 6px 20px #1d38530b;display:flex;flex-direction:column;gap:12px}
+.card>span{font-size:13px;color:#607184;font-weight:700}.card strong{font-size:22px;line-height:1.35;overflow-wrap:anywhere;letter-spacing:-.4px}.card small{color:#718093;line-height:1.5;font-size:12px}
+footer{margin-top:24px;color:#7b8794;font-size:12px}
+@media(max-width:700px){.wrap{padding:20px 14px}.intro{align-items:flex-start;flex-direction:column;padding-top:26px}h1{font-size:26px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:16px;min-height:143px}.card strong{font-size:18px}}
+@media(max-width:420px){.cards{grid-template-columns:1fr}}

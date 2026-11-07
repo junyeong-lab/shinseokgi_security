@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>신석기백화점 | 내 PC 보안</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand"><span class="mark" aria-hidden="true">S</span><div><strong>신석기백화점</strong><span>직원용 PC 보안</span></div></div>
+      <span class="role">내 PC 전용</span>
+    </header>
+    <section class="intro">
+      <div><p class="eyebrow">PC SECURITY</p><h1>내 PC 상태</h1><p class="sub">이 컴퓨터에서 직접 확인한 정보입니다. 다른 직원의 PC나 관리자 기록은 표시하지 않습니다.</p></div>
+      <button id="refresh" type="button">지금 확인</button>
+    </section>
+    <p class="status" id="status" role="status" aria-live="polite">PC 상태를 확인하는 중입니다.</p>
+    <section class="cards" aria-label="내 PC 상태 항목">
+      <article class="card"><span>CPU 사용률</span><strong id="cpu">—</strong><small id="cpuNote">조회 전</small></article>
+      <article class="card"><span>메모리</span><strong id="memory">—</strong><small id="memoryNote">조회 전</small></article>
+      <article class="card"><span>디스크 여유 공간</span><strong id="disk">—</strong><small id="diskNote">조회 전</small></article>
+      <article class="card"><span>네트워크</span><strong id="network">—</strong><small id="networkNote">조회 전</small></article>
+      <article class="card"><span>Windows 방화벽</span><strong id="firewall">—</strong><small id="firewallNote">조회 전</small></article>
+      <article class="card"><span>Windows 기록</span><strong id="events">—</strong><small id="eventsNote">조회 전</small></article>
+    </section>
+    <footer>읽기 전용 · 설정 변경 없음 · 이 화면에서 외부 서버로 자동 전송하지 않습니다.</footer>
+  </main>
+</body>
+</html>
